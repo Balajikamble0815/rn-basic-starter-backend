@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+
+# Environment Variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+
+# Build
+dist/
+build/
+
+# Temporary Files
+tmp/
+temp/
+
+# VS Code
+.vscode/
+
+# JetBrains IDE
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# npm
+package-lock.json
+
+# OS Generated Files
+*.swp
+*.swo
+
+# Uploads (optional)
+uploads/*
+!uploads/.gitkeep
