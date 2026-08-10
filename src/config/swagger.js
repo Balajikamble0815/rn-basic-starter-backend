@@ -1,24 +1,22 @@
-const swaggerJsDoc = require("swagger-jsdoc");
+const swaggerJsdoc = require("swagger-jsdoc");
 
 const options = {
   definition: {
-    openapi: "3.0.0",
+    openapi: "3.0.3",
     info: {
-      title: "RN Basic Starter API",
+      title: "RN Basic Starter Backend API",
       version: "1.0.0",
-      description: "Node.js + SQL Server Backend APIs",
+      description: "API documentation for RN Basic Starter Backend",
     },
-
     servers: [
       {
         url: "http://localhost:5000",
       },
     ],
   },
-
   apis: ["./src/routes/*.js"],
 };
 
-const swaggerSpec = swaggerJsDoc(options);
+const swaggerSpec = swaggerJsdoc(options);
 
 module.exports = swaggerSpec;

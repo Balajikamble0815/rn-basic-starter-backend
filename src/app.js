@@ -17,10 +17,16 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "RN Basic Starter Backend Running",
+  });
+});
+
 app.use("/api/auth", authRoutes);
 
-// Swagger
+// Swagger Route
 app.use(
   "/api-docs",
   swaggerUi.serve,
