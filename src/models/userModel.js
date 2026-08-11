@@ -108,11 +108,27 @@ const updateProfileImage = async (id, image) => {
 
   return true;
 };
+const updatePassword = async (id, passwordHash) => {
+  const request = new sql.Request();
 
+  request.input("Id", sql.Int, id);
+  request.input("PasswordHash", sql.NVarChar, passwordHash);
+
+  await request.query(`
+    UPDATE Users
+    SET
+      PasswordHash=@PasswordHash,
+      UpdatedAt=GETDATE()
+    WHERE Id=@Id
+  `);
+
+  return true;
+};
 module.exports = {
   createUser,
   getUserByEmail,
   getUserById,
   updateProfile,
   updateProfileImage,
+  updatePassword,
 };

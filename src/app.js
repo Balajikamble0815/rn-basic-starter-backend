@@ -7,7 +7,7 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./config/swagger");
 
 const authRoutes = require("./routes/authRoutes");
-
+const userRoutes = require("./routes/userRoutes");
 const app = express();
 
 app.use(cors());
@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
-
+app.use("/api/users", userRoutes);
 // Swagger Route
 app.use(
   "/api-docs",

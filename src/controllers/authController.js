@@ -35,10 +35,12 @@ const register = async (req, res) => {
     });
 
     return res.status(201).json({
-      success: true,
-      message: "User registered successfully",
-      userId: user.Id,
-    });
+  success: true,
+  message: "User registered successfully",
+  data: {
+    userId: user.Id,
+  },
+});
   } catch (error) {
     console.log(error);
 
@@ -84,17 +86,19 @@ const login = async (req, res) => {
       }
     );
 
-    return res.json({
-      success: true,
-      message: "Login Successful",
-      token,
-      user: {
-        id: user.Id,
-        name: user.Name,
-        email: user.Email,
-        mobile: user.Mobile,
-      },
-    });
+   return res.status(200).json({
+  success: true,
+  message: "Login successful",
+  data: {
+    token,
+    user: {
+      id: user.Id,
+      name: user.Name,
+      email: user.Email,
+      mobile: user.Mobile,
+    },
+  },
+});
   } catch (error) {
     console.log(error);
 
@@ -104,6 +108,7 @@ const login = async (req, res) => {
     });
   }
 };
+
 
 module.exports = {
   register,
